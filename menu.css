@@ -1,0 +1,110 @@
+/* Ensure border-box is used */
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+
+/*--------------------------------------*/
+/*            Core Styles               */
+/*--------------------------------------*/
+
+body {
+    margin: 0;
+    padding:0;
+    background: #333;
+}
+
+h1 {
+    font-size: 3em;
+    color: rgb(116, 206, 241);
+    text-align: center;
+    padding-top: 30px;
+}
+
+h2 {
+    text-align: center;
+    padding-top: 200px;
+}
+
+a {
+    font-size: 1.25em;
+    color: rgb(116, 206, 241);
+}
+
+/*--------------------------------------*/
+/* Acts as btn & contains hamburger     */
+/*--------------------------------------*/
+
+.menu-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15em;
+    cursor: pointer;
+}
+
+
+/*--------------------------------------*/
+/*   Styles the hamburger for btn       */
+/*--------------------------------------*/
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content:'';
+    display: block;
+    background: #fff;
+    height: 27px;
+    width: 15.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms;
+}
+
+/*--------------------------------------*/
+/* Instance of hamburger (top line)     */
+/*--------------------------------------*/
+
+.hamburger::before {
+    transform: translateY(-60px);
+}
+
+/*--------------------------------------*/
+/* Instance of hamburger bottom line    */
+/*--------------------------------------*/
+
+.hamburger::after {
+    transform: translateY(32px);
+}
+
+/*--------------------------------------*/
+/* When Nav menu is open, hamburger = X */
+/*--------------------------------------*/
+
+.open .hamburger {
+    transform: rotate(45deg);
+    background: #ff0000;
+}
+
+/*--------------------------------------*/
+/* Before hamburger line is invisible   */
+/*--------------------------------------*/
+.open .hamburger::before {
+    opacity: 0;            
+}
+
+/*--------------------------------------*/
+/* Animates after line to create an X   */
+/*--------------------------------------*/
+.open .hamburger::after {
+    transform: translateY(-25px) rotate(-90deg);
+    background: #ff0000;
+}
